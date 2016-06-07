@@ -5,7 +5,7 @@ public class PickUps : MonoBehaviour {
     [HideInInspector]
 	public PlayerShooting ps;
 	void Start(){
-			ps = GameObject.FindGameObjectWithTag ("Player").GetComponent<PlayerShooting> ();
+			//ps = GameObject.FindGameObjectWithTag ("Player").GetComponent<PlayerShooting> ();
     }
 	void Update () {
 		
@@ -15,7 +15,7 @@ public class PickUps : MonoBehaviour {
 	void OnTriggerEnter(Collider other){
 		if (other.tag == "Player") {
 			Destroy (this.gameObject);
-			ps.poweredUp = true;
+			//ps.poweredUp = true;
 		}
 
 	}

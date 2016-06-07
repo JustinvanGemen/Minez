@@ -13,13 +13,17 @@ public class MovementPlayer : MonoBehaviour
     private float rotationR = 0;
     private float rotationL = 0;
 
+    private float rotateL = 50f;
+    private float rotateR = 50f;
+    private float moveF = 0.4f;
+    private float moveB = 0.4f;
 
     private Rigidbody rb;
 
     void Start()
     {
 
-        Y = 3.5f;
+        //Y = 3.5f;
         rb = GetComponent<Rigidbody>();
         this.transform.position = new Vector3(X, Y, Z);
     }
@@ -31,20 +35,20 @@ public class MovementPlayer : MonoBehaviour
         {
             if (speedF < 20)
             {
-                speedF += 0.4f;
+                speedF += moveF;
             }
         }
         else
         {
             if (speedF > 0)
             {
-                speedF -= 0.4f;
+                speedF -= moveF;
             }
             
         }
         if (Input.GetKey(KeyCode.A))
         {
-            rotationL = 20f;
+            rotationL = rotateL;
         }
         else
         {
@@ -54,20 +58,20 @@ public class MovementPlayer : MonoBehaviour
         {
             if (speedB < 20)
             {
-                speedB += 0.4f;
+                speedB += moveB;
             }
         }
         else
         {
             if (speedB > 0)
             {
-                speedB -= 0.4f;
+                speedB -= moveB;
             }
         }
         if (Input.GetKey(KeyCode.D))
         {
      
-            rotationR = 20f;
+            rotationR = rotateR;
         }
         else
         {

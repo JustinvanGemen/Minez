@@ -13,7 +13,7 @@ public class EnemyShooting : MonoBehaviour {
     private Transform player;
     private bool shooting;
 
-    private EnemyMovement enemyMovement = new EnemyMovement();
+    //private EnemyMovement enemyMovement = new EnemyMovement();
 
 
 	// Use this for initialization
@@ -33,13 +33,13 @@ public class EnemyShooting : MonoBehaviour {
         delayCounter -= Time.deltaTime;
     
         
-        Debug.Log(enemyMovement.inRange);
+       // Debug.Log(enemyMovement.inRange);
         
-        if (enemyMovement.inRange && enemyMovement.target)
-        {
+        //if (enemyMovement.inRange && enemyMovement.target)
+        //{
          
-            Shoot();
-        }
+        //    Shoot();
+        //}
         
     }
 

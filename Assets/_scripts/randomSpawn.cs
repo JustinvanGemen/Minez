@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class randomSpawn : MonoBehaviour {
 
@@ -8,7 +9,7 @@ public class randomSpawn : MonoBehaviour {
     public Transform[] wayPoints;
     private int waypointIndex;
 
-
+    
 
     void Start()
     {
@@ -22,7 +23,7 @@ public class randomSpawn : MonoBehaviour {
             i = Time.time + 10f;
             spawn();
         }
-        //PickUps PickUp = Instantiate(PickUp, waypointIndex.position, waypointIndex.rotation) as PickUps;
+        
     }
 
     void spawn ()

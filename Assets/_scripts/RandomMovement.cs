@@ -11,14 +11,21 @@ public class RandomMovement : MonoBehaviour
     public float speed = 5f;
 
 
+    void Start()
+    {
+        //Y = 3.5f;   
+    }
+
     void Awake()
     {
+       
+        
         nav = GetComponent<NavMeshAgent>();
     }
     
     void Update()
     {
-        transform.LookAt((wayPoints[waypointIndex].position));
+        //  transform.LookAt((wayPoints[waypointIndex].position));
         move();
 
     }
