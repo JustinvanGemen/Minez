@@ -18,6 +18,7 @@ public class KillPlayer : MonoBehaviour {
 		if (other.CompareTag ("Player")) 
 		{
 			Destroy (other.gameObject);
+            Destroy(this.gameObject);
 		}
     }
 }
