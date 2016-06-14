@@ -32,8 +32,8 @@ public class Projectile : MonoBehaviour
         {
             
             scoreManager.Score += 150;
-            KillSelf();
-            Destroy(other.gameObject);
+            //KillSelf();
+            //Destroy(other.gameObject);
 
 
         }
@@ -42,6 +42,6 @@ public class Projectile : MonoBehaviour
     void KillSelf()
     {
         
-        Destroy(gameObject);
+        //Destroy(gameObject);
     }
 }

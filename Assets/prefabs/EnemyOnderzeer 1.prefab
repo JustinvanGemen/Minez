@@ -47,6 +47,8 @@ GameObject:
   - 114: {fileID: 11433172}
   - 54: {fileID: 5438716}
   - 65: {fileID: 6571804}
+  - 114: {fileID: 11499188}
+  - 135: {fileID: 13535942}
   m_Layer: 0
   m_Name: EnemyOnderzeer 1
   m_TagString: Enemy
@@ -54,6 +56,33 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &194534
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 401564}
+  m_Layer: 0
+  m_Name: Muzzle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &401564
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 194534}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 2.14}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 473724}
+  m_RootOrder: 2
 --- !u!4 &444538
 Transform:
   m_ObjectHideFlags: 1
@@ -90,6 +119,7 @@ Transform:
   m_Children:
   - {fileID: 467598}
   - {fileID: 444538}
+  - {fileID: 401564}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!23 &2327556
@@ -489,6 +519,37 @@ MonoBehaviour:
   - {fileID: 450336, guid: 0f48febecb7c0a5479c71d01ae6cc6e0, type: 2}
   - {fileID: 417096, guid: 0f48febecb7c0a5479c71d01ae6cc6e0, type: 2}
   speed: 5
+--- !u!114 &11499188
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 173590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72b2c44cefd4f9d4eae8a4adff37e4ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyProjectile: {fileID: 11498872, guid: ab84edf347212b34ca65d585b77f73d1, type: 2}
+  muzzle: {fileID: 401564}
+  bulletSpeed: 10
+  target: {fileID: 455974, guid: 1ec2fc5822b78174eb73ce4da6389956, type: 2}
+  eHealth: 100
+  range: 23
+  seeRange: 60
+  inRange: 0
+--- !u!135 &13535942
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 173590}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Radius: 20.687586
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!195 &19588362
 NavMeshAgent:
   m_ObjectHideFlags: 1
@@ -520,6 +581,27 @@ Prefab:
       propertyPath: wayPoints.Array.size
       value: 255
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: enemyProjectile
+      value: 
+      objectReference: {fileID: 11498872, guid: ab84edf347212b34ca65d585b77f73d1,
+        type: 2}
+    - target: {fileID: 0}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 455974, guid: 1ec2fc5822b78174eb73ce4da6389956, type: 2}
+    - target: {fileID: 0}
+      propertyPath: range
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: seeRange
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: muzzle
+      value: 
+      objectReference: {fileID: 401564}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 173590}

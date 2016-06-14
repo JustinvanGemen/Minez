@@ -14,21 +14,25 @@ public class EnemyShooting : MonoBehaviour {
     public Transform target;
     private bool shooting;
 
+    public float eHealth = 100;
+
+
     public float range;
     public float seeRange;
     public bool inRange;
-    //private EnemyMovement enemyMovement = new EnemyMovement();
 
 
 	
-	void Start () {
+	void Start ()
+    {
         inRange = false;
 
-        Destroy(gameObject, 45f);
+        //Destroy(gameObject, 120f);
 	}
 	
 	
-	void Awake () {
+	void Awake ()
+    {
         col = GetComponent<SphereCollider>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
 
@@ -36,6 +40,7 @@ public class EnemyShooting : MonoBehaviour {
 
     void Update()
     {
+        Debug.Log(eHealth);
         delayCounter -= Time.deltaTime;
     
         if(Vector3.Distance (transform.position, target.position) < range)
@@ -46,15 +51,16 @@ public class EnemyShooting : MonoBehaviour {
         {
             inRange = false;
         }
-        
-       
+       if(eHealth <= 100)
+        {
+            //Destroy(this.gameObject);
+        }
         
         if (inRange == true && delayCounter <= Time.deltaTime)
         {
-            Debug.Log(delayCounter);
+            transform.LookAt(player.position);
             Shoot();
         }
-        
     }
 
     void Shoot()
@@ -64,5 +70,16 @@ public class EnemyShooting : MonoBehaviour {
         EnemyProjectile bullet = Instantiate(enemyProjectile, muzzle.position, muzzle.rotation) as EnemyProjectile;
         bullet.SetSpeed(bulletSpeed);
         delayCounter = Time.deltaTime + fireRate;
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("Boeit me echt niet");
+        if (other.CompareTag("Bullet"))
+        {
+            eHealth -= 10;
+            Destroy(other.gameObject);
+        }
+
     }
 }

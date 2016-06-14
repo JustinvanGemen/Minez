@@ -61,7 +61,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\ScoreManager.cs" />
     <Compile Include="Assets\_scripts\EnemyProjectile.cs" />
     <Compile Include="Assets\_scripts\EnemyShooting.cs" />
     <Compile Include="Assets\_scripts\EnemySpawner.cs" />
@@ -73,6 +72,7 @@
     <Compile Include="Assets\_scripts\PlayerShooting.cs" />
     <Compile Include="Assets\_scripts\Projectile.cs" />
     <Compile Include="Assets\_scripts\RandomMovement.cs" />
+    <Compile Include="Assets\_scripts\ScoreManager.cs" />
     <Compile Include="Assets\_scripts\randomSpawn.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
