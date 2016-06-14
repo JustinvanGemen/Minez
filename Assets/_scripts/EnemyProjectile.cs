@@ -4,9 +4,10 @@ using System.Collections;
 public class EnemyProjectile : MonoBehaviour {
 
     private float _speed = 1;
-
-	// Use this for initialization
-	void Start () {
+    public PlayerHealth ph;
+    // Use this for initialization
+    void Start () {
+        ph = GameObject.FindGameObjectWithTag ("Player").GetComponent<PlayerHealth> ();
         Destroy(gameObject, 15f);
 	}
 	
@@ -24,6 +25,7 @@ public class EnemyProjectile : MonoBehaviour {
     {
         if (other.CompareTag ("Player"))
         {
+            ph.currentHealth -= 10;
             Destroy(other.gameObject);
 			Destroy (this.gameObject);
 

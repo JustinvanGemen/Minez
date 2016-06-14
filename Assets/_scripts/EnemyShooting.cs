@@ -11,17 +11,23 @@ public class EnemyShooting : MonoBehaviour {
     private GameObject Player;
     private SphereCollider col;
     private Transform player;
+    public Transform target;
     private bool shooting;
 
+    public float range;
+    public float seeRange;
+    public bool inRange;
     //private EnemyMovement enemyMovement = new EnemyMovement();
 
 
-	// Use this for initialization
+	
 	void Start () {
+        inRange = false;
+
         Destroy(gameObject, 45f);
 	}
 	
-	// Update is called once per frame
+	
 	void Awake () {
         col = GetComponent<SphereCollider>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
@@ -32,14 +38,22 @@ public class EnemyShooting : MonoBehaviour {
     {
         delayCounter -= Time.deltaTime;
     
+        if(Vector3.Distance (transform.position, target.position) < range)
+        {
+            inRange = true;
+        }
+        else
+        {
+            inRange = false;
+        }
         
-       // Debug.Log(enemyMovement.inRange);
+       
         
-        //if (enemyMovement.inRange && enemyMovement.target)
-        //{
-         
-        //    Shoot();
-        //}
+        if (inRange == true && delayCounter <= Time.deltaTime)
+        {
+            Debug.Log(delayCounter);
+            Shoot();
+        }
         
     }
 

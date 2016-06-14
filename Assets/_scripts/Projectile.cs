@@ -3,12 +3,15 @@ using System.Collections;
 
 public class Projectile : MonoBehaviour
 {
+    
+    public ScoreManager scoreManager;
 
-    private float _speed = 20;
+    private float _speed = 35;
 
     void Start()
     {
-        Destroy(gameObject, 2f);
+        scoreManager = GameObject.FindGameObjectWithTag("sManager").GetComponent<ScoreManager>();
+        Destroy(gameObject, 3f);
     }
 
     void Update()
@@ -28,10 +31,17 @@ public class Projectile : MonoBehaviour
         if (other.CompareTag("Enemy"))
         {
             
+            scoreManager.Score += 150;
+            KillSelf();
             Destroy(other.gameObject);
-            Destroy(gameObject);
-        
+
+
         }
        
+    }
+    void KillSelf()
+    {
+        
+        Destroy(gameObject);
     }
 }
