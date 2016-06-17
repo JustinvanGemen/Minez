@@ -14,7 +14,7 @@ GameObject:
   - 65: {fileID: 6539834}
   - 114: {fileID: 11493518}
   m_Layer: 0
-  m_Name: PickUp
+  m_Name: Final pick up
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
