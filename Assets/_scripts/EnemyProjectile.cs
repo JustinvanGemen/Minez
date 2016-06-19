@@ -25,8 +25,8 @@ public class EnemyProjectile : MonoBehaviour {
     {
         if (other.CompareTag ("Player"))
         {
-            ph.currentHealth -= 10;
-            Destroy(other.gameObject);
+            ph.currentHealth -= 80;
+            
 			Destroy (this.gameObject);
 
         }

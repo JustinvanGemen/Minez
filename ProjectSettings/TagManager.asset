@@ -12,6 +12,7 @@ TagManager:
   - Wall
   - waypoint
   - sManager
+  - Mine
   layers:
   - Default
   - TransparentFX

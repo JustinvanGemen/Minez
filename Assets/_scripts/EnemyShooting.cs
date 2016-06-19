@@ -40,7 +40,7 @@ public class EnemyShooting : MonoBehaviour {
 
     void Update()
     {
-        Debug.Log(eHealth);
+        
         delayCounter -= Time.deltaTime;
     
         if(Vector3.Distance (transform.position, target.position) < range)
@@ -51,9 +51,9 @@ public class EnemyShooting : MonoBehaviour {
         {
             inRange = false;
         }
-       if(eHealth <= 100)
+       if(eHealth == 0)
         {
-            //Destroy(this.gameObject);
+            Destroy(gameObject);
         }
         
         if (inRange == true && delayCounter <= Time.deltaTime)
@@ -74,8 +74,7 @@ public class EnemyShooting : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Boeit me echt niet");
-        if (other.CompareTag("Bullet"))
+        if (other.CompareTag("playerBullet"))
         {
             eHealth -= 10;
             Destroy(other.gameObject);
