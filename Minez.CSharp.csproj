@@ -66,6 +66,7 @@
     <Compile Include="Assets\_scripts\EnemySpawner.cs" />
     <Compile Include="Assets\_scripts\KillPlayer.cs" />
     <Compile Include="Assets\_scripts\MenuScript.cs" />
+    <Compile Include="Assets\_scripts\MineMovement.cs" />
     <Compile Include="Assets\_scripts\MovementPlayer.cs" />
     <Compile Include="Assets\_scripts\PickUps.cs" />
     <Compile Include="Assets\_scripts\PlayerHealth.cs" />

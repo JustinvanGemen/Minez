@@ -15,9 +15,9 @@ public class KillPlayer : MonoBehaviour {
 
     void OnTriggerEnter (Collider other)
     {
-		if (other.CompareTag ("Player")) 
+		if (other.CompareTag ("playerBullet")) 
 		{
-			Destroy (other.gameObject);
+			
             Destroy(this.gameObject);
 		}
     }

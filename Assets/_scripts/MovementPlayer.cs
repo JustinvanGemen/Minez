@@ -46,7 +46,7 @@ public class MovementPlayer : MonoBehaviour
     {
         if (other.CompareTag("PickUp"))
         {
-            randomNum = Random.Range(1, 6);
+            randomNum = Random.Range(1, 5);
             Debug.Log(randomNum);
             powerUp();
         }
@@ -73,7 +73,9 @@ public class MovementPlayer : MonoBehaviour
 
     void Update()
     {
-       
+        
+        UpdatepowerupUI();
+
         //POWER-UP MANAGER
 
         //Swiftness
@@ -198,6 +200,7 @@ public class MovementPlayer : MonoBehaviour
 
     void powerUp()
     {
+        Debug.Log(randomNum);
         Debug.Log("StopDepressingMe");
         powerUp1 = false;
         powerUp2 = false;
@@ -205,6 +208,7 @@ public class MovementPlayer : MonoBehaviour
         powerUp4 = false;
         powerUp5 = false;
         ps.poweredUp = false;
+        ps.fireRate = 0.3f;
         if (randomNum == 1)
         {
             currPowerUp = "BulletPower!";
@@ -223,12 +227,16 @@ public class MovementPlayer : MonoBehaviour
         {
             currPowerUp = "You Healed!";
             powerUp3 = true;
+            ph.Health += 250;
+            //done
 
         }
         if (randomNum == 4)
         {
             currPowerUp = "Rapid Fire!";
             powerUp4 = true;
+            ps.fireRate = 0.2f;
+            //done
         }
         if (randomNum == 5)
         {
@@ -241,8 +249,6 @@ public class MovementPlayer : MonoBehaviour
 
     private void UpdatepowerupUI()
     {
-
-        
         powerupText.text = "PowerUp=" + currPowerUp.ToString();
     }
 

@@ -10,7 +10,7 @@ public class PlayerShooting : MonoBehaviour {
     public float bulletSpeed;
 
     private float delayCounter = 0.0F;
-    private float fireRate = 0.3F;
+    public float fireRate = 0.3F;
     // Use this for initialization
     void Start () {
 	

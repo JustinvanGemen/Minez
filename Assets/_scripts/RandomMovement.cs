@@ -6,9 +6,11 @@ public class RandomMovement : MonoBehaviour
 {
     public Transform[] wayPoints;
     private int waypointIndex;
+    private Transform player;
 
     private NavMeshAgent nav;
     public float speed = 5f;
+    private EnemyShooting es;
 
 
     void Start()
@@ -18,9 +20,10 @@ public class RandomMovement : MonoBehaviour
 
     void Awake()
     {
-       
-        
+
+        es = GetComponent<EnemyShooting>();
         nav = GetComponent<NavMeshAgent>();
+        player = GameObject.FindGameObjectWithTag("Player").transform;
     }
     
     void Update()
@@ -33,11 +36,17 @@ public class RandomMovement : MonoBehaviour
     void move()
     {
         nav.speed = speed;
-
-        if(nav.remainingDistance < 0.5)
+        if (es.inRange == false)
         {
-            waypointIndex = Random.Range(0, wayPoints.Length);
+            if (nav.remainingDistance < 0.5)
+            {
+                waypointIndex = Random.Range(0, wayPoints.Length);
+            }
+            nav.SetDestination(wayPoints[waypointIndex].position);
         }
-        nav.SetDestination(wayPoints[waypointIndex].position);
+        else if(es.inRange == true)
+        {
+            nav.SetDestination(player.position);
+        }
     }
 }
