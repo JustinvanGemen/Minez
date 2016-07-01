@@ -6,13 +6,14 @@ public class ScoreManager : MonoBehaviour {
 
     
     public Text scoreText;
-    public float Score;
+    public float score;
+
     
 
 	// Use this for initialization
 	void Start () {
       
-        Score = 0;
+        score = 0;
         
 	}
 	
@@ -23,6 +24,6 @@ public class ScoreManager : MonoBehaviour {
 
     private void UpdateScoreUI()
     {
-        scoreText.text = "Score:" + Score.ToString();
+        scoreText.text = "Score:" + score.ToString();
     }
 }

@@ -26,7 +26,6 @@ public class MineMovement : MonoBehaviour
 
     void Update()
     {
-        //  transform.LookAt((wayPoints[waypointIndex].position));
         move();
 
     }

@@ -49,6 +49,7 @@ GameObject:
   - 65: {fileID: 6571804}
   - 114: {fileID: 11499188}
   - 135: {fileID: 13535942}
+  - 114: {fileID: 11428562}
   m_Layer: 0
   m_Name: EnemyOnderzeer 1
   m_TagString: Enemy
@@ -251,6 +252,18 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11428562
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 173590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3a4043ca9d51394bb76f6478a2371df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eHealth: 100
 --- !u!114 &11433172
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -534,7 +547,6 @@ MonoBehaviour:
   muzzle: {fileID: 401564}
   bulletSpeed: 10
   target: {fileID: 455974, guid: 1ec2fc5822b78174eb73ce4da6389956, type: 2}
-  eHealth: 100
   range: 23
   seeRange: 60
   inRange: 0

@@ -1,47 +1,45 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+/*
+Wat doet je class??? 1 ding?
+ */
 public class Projectile : MonoBehaviour
 {
-    
-    public ScoreManager scoreManager;
-
+    private ScoreManager scoreManager;
     private float _speed = 35;
-
+    //Destroys itself after 3 seconds.
     void Start()
     {
         scoreManager = GameObject.FindGameObjectWithTag("sManager").GetComponent<ScoreManager>();
         Destroy(gameObject, 3f);
     }
-
+    //Moves the projectile forward in a straight line.
     void Update()
     {
         transform.Translate(Vector3.up * _speed * Time.deltaTime);
     }
-
+    //Sets the speed of the projectile depending on the value.
     public void SetSpeed(float value)
     {
         _speed = value;
     }
-
-
-
+    //Activates KillSelf() when colliding with an Enemy.
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Enemy"))
         {
-            
-            scoreManager.Score += 150;
             KillSelf();
-            //Destroy(other.gameObject);
-
-
         }
-       
+        else if (other.CompareTag("Mine"))
+        {
+            scoreManager.score += 150;
+            KillSelf();
+            Destroy(other.gameObject);
+        }
     }
+    //Destroys itself on collision with an Enemy.
     void KillSelf()
     {
-        
         Destroy(gameObject);
     }
 }

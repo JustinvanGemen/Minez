@@ -61,20 +61,22 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\_scripts\EnemyProjectile.cs" />
-    <Compile Include="Assets\_scripts\EnemyShooting.cs" />
-    <Compile Include="Assets\_scripts\EnemySpawner.cs" />
-    <Compile Include="Assets\_scripts\KillPlayer.cs" />
-    <Compile Include="Assets\_scripts\MenuScript.cs" />
-    <Compile Include="Assets\_scripts\MineMovement.cs" />
-    <Compile Include="Assets\_scripts\MovementPlayer.cs" />
-    <Compile Include="Assets\_scripts\PickUps.cs" />
-    <Compile Include="Assets\_scripts\PlayerHealth.cs" />
-    <Compile Include="Assets\_scripts\PlayerShooting.cs" />
-    <Compile Include="Assets\_scripts\Projectile.cs" />
-    <Compile Include="Assets\_scripts\RandomMovement.cs" />
-    <Compile Include="Assets\_scripts\ScoreManager.cs" />
-    <Compile Include="Assets\_scripts\randomSpawn.cs" />
+    <Compile Include="Assets\_scripts\EnemyScripts\EnemyHealth.cs" />
+    <Compile Include="Assets\_scripts\EnemyScripts\EnemyProjectile.cs" />
+    <Compile Include="Assets\_scripts\EnemyScripts\EnemyShooting.cs" />
+    <Compile Include="Assets\_scripts\EnemyScripts\EnemySpawner.cs" />
+    <Compile Include="Assets\_scripts\EnemyScripts\KillPlayer.cs" />
+    <Compile Include="Assets\_scripts\EnemyScripts\MineMovement.cs" />
+    <Compile Include="Assets\_scripts\EnemyScripts\RandomMovement.cs" />
+    <Compile Include="Assets\_scripts\EnemyScripts\randomSpawn.cs" />
+    <Compile Include="Assets\_scripts\PickUpScripts\PickUps.cs" />
+    <Compile Include="Assets\_scripts\PlayerScripts\MovementPlayer.cs" />
+    <Compile Include="Assets\_scripts\PlayerScripts\PlayerHealth.cs" />
+    <Compile Include="Assets\_scripts\PlayerScripts\PlayerShooting.cs" />
+    <Compile Include="Assets\_scripts\PlayerScripts\PowerUpScript.cs" />
+    <Compile Include="Assets\_scripts\PlayerScripts\Projectile.cs" />
+    <Compile Include="Assets\_scripts\UIandManagerScripts\MenuScript.cs" />
+    <Compile Include="Assets\_scripts\UIandManagerScripts\ScoreManager.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>

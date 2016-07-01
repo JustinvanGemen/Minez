@@ -4,13 +4,16 @@ using System.Collections;
 public class PlayerShooting : MonoBehaviour {
 
 	public bool poweredUp;
-	public GameObject torpedo1;
-	public GameObject torpedo2;
-    public Transform muzzle;
-    public float bulletSpeed;
+    [SerializeField]
+    private GameObject torpedo1;
+    [SerializeField]
+	private GameObject torpedo2;
+    [SerializeField]
+    private Transform muzzle;
+    private float bulletSpeed;
 
-    private float delayCounter = 0.0F;
-    public float fireRate = 0.3F;
+    private float _delayCounter = 0.0F;
+    public float _fireRate = 0.3F;
     // Use this for initialization
     void Start () {
 	
@@ -18,7 +21,7 @@ public class PlayerShooting : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	 if (Input.GetMouseButton(0) && Time.time > delayCounter)
+	 if (Input.GetMouseButton(0) && Time.time > _delayCounter)
         {
             Shoot();
         }
@@ -28,10 +31,10 @@ public class PlayerShooting : MonoBehaviour {
     {
 		if (!poweredUp) {
 			GameObject Torpedo1 = Instantiate (torpedo1, muzzle.position, muzzle.rotation) as GameObject;
-			delayCounter = Time.time + fireRate;
+			_delayCounter = Time.time + _fireRate;
 		} else if (poweredUp) {
 			GameObject Torpedo2 = Instantiate (torpedo2, muzzle.position, muzzle.rotation) as GameObject;
-			delayCounter = Time.time + fireRate;
+			_delayCounter = Time.time + _fireRate;
 		}
 			
 

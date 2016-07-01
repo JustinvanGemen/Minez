@@ -4400,6 +4400,14 @@ Prefab:
       propertyPath: powerupText
       value: 
       objectReference: {fileID: 1294726875}
+    - target: {fileID: 11480568, guid: 1ec2fc5822b78174eb73ce4da6389956, type: 2}
+      propertyPath: powerupText
+      value: 
+      objectReference: {fileID: 1294726875}
+    - target: {fileID: 11480568, guid: 1ec2fc5822b78174eb73ce4da6389956, type: 2}
+      propertyPath: _powerupText
+      value: 
+      objectReference: {fileID: 1294726875}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1ec2fc5822b78174eb73ce4da6389956, type: 2}
   m_IsPrefabParent: 0

@@ -15,6 +15,7 @@ GameObject:
   - 54: {fileID: 5481624}
   - 114: {fileID: 11414496}
   - 114: {fileID: 11483786}
+  - 114: {fileID: 11480568}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1388,6 +1389,7 @@ MonoBehaviour:
   torpedo2: {fileID: 149924, guid: 2973f364ae8b60949929b667d20e07db, type: 2}
   muzzle: {fileID: 402138}
   bulletSpeed: 35
+  fireRate: 0.3
 --- !u!114 &11452608
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1399,9 +1401,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7ce4e01811d6b246b06e1f9b25fffc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 1000
-  none: 
+  powerupText: {fileID: 0}
+  currPowerUp: 
   speedF: 0
+--- !u!114 &11480568
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 111232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b56502e2cf87a9e439bdeaa783b4f91c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  powerupText: {fileID: 0}
+  currPowerUp: 
 --- !u!114 &11483786
 MonoBehaviour:
   m_ObjectHideFlags: 1
