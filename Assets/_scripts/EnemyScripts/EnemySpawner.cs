@@ -8,12 +8,12 @@ public class EnemySpawner : MonoBehaviour {
     public int time;
     public int repeatRate;
 
-	// Use this for initialization
+	// Activates Spawn() 
 	void Start () {
         InvokeRepeating("Spawn", time, repeatRate);
 	}
 	
-	// Update is called once per frame
+	// Spawns an Enemy
 	void Spawn () {
         Instantiate(enemy, spawner.position, spawner.rotation);
 	}

@@ -32,11 +32,11 @@ public class PowerUpScript : MonoBehaviour {
         if (other.CompareTag("PickUp"))
         {
             _randomNum = Random.Range(1, 5); 
-            powerUp();
+            PowerUp();
         }
     }
         //Activates power-up based on a random number.
-    void powerUp()
+    void PowerUp()
     {
         powerUp1 = false;
         powerUp2 = false;
@@ -51,24 +51,24 @@ public class PowerUpScript : MonoBehaviour {
             powerUp1 = true;
             _ps.poweredUp = true;
         }
-        if (_randomNum == 2)
+        else if (_randomNum == 2)
         {
             currPowerUp = "Swiftness!";
             powerUp2 = true;           
         }
-        if (_randomNum == 3)
+        else if (_randomNum == 3)
         {
             currPowerUp = "You Healed!";
             powerUp3 = true;
             _ph.Health += 250;
         }
-        if (_randomNum == 4)
+        else if (_randomNum == 4)
         {
             currPowerUp = "Rapid Fire!";
             powerUp4 = true;
             _ps._fireRate = 0.2f;           
         }
-        if (_randomNum == 5)
+        else if (_randomNum == 5)
         {
             powerUp5 = true;
             currPowerUp = "Regen Up!";

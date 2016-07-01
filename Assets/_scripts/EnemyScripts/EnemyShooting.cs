@@ -11,7 +11,8 @@ public class EnemyShooting : MonoBehaviour {
     private float fireRate = 1F;
     private GameObject Player;
     private Transform player;
-    public Transform target;
+    [SerializeField]
+    private Transform target;
     private bool shooting;
     public float range;
     public float seeRange;
