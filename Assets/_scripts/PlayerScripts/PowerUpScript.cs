@@ -29,15 +29,17 @@ public class PowerUpScript : MonoBehaviour {
     //When collecting a pick-up it generates a random number and activates the powerUp() function.
     void OnTriggerEnter(Collider other)
     {
+        Debug.Log("Hoi");
         if (other.CompareTag("PickUp"))
         {
-            _randomNum = Random.Range(1, 5); 
+            _randomNum = Random.Range(1, 6);
             PowerUp();
         }
     }
         //Activates power-up based on a random number.
     void PowerUp()
     {
+        Debug.Log(_randomNum);
         powerUp1 = false;
         powerUp2 = false;
         powerUp3 = false;
@@ -77,6 +79,6 @@ public class PowerUpScript : MonoBehaviour {
     //Updates the UI with the current power-up.
     private void UpdatepowerupUI()
     {
-        _powerupText.text = "PowerUp=" + currPowerUp.ToString();
+        _powerupText.text = "PowerUp = " + currPowerUp.ToString();
     }
 }
