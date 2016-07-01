@@ -39,10 +39,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4d882bcdaae7814fb8a831a42491e50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 131632, guid: 31df80f318534664dbfbb8a7227dab88, type: 2}
-  spawner: {fileID: 455302}
-  time: 2
-  repeatRate: 7
+  _enemy: {fileID: 173590, guid: 4f0df8d3355786b4abb10f744d801231, type: 2}
+  _spawner: {fileID: 455302}
+  _time: 5
+  _repeatRate: 8
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -61,6 +61,22 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: repeatRate
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: _enemy
+      value: 
+      objectReference: {fileID: 173590, guid: 4f0df8d3355786b4abb10f744d801231, type: 2}
+    - target: {fileID: 0}
+      propertyPath: _spawner
+      value: 
+      objectReference: {fileID: 455302}
+    - target: {fileID: 0}
+      propertyPath: _time
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: _repeatRate
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

@@ -29,7 +29,6 @@ public class PowerUpScript : MonoBehaviour {
     //When collecting a pick-up it generates a random number and activates the powerUp() function.
     void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Hoi");
         if (other.CompareTag("PickUp"))
         {
             _randomNum = Random.Range(1, 6);

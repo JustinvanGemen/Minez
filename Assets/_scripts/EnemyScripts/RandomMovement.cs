@@ -4,35 +4,26 @@ using System.Collections.Generic;
 
 public class RandomMovement : MonoBehaviour
 {
-    public Transform[] wayPoints;
+    [SerializeField]
+    private Transform[] wayPoints;
     private int waypointIndex;
     private Transform player;
-
     private NavMeshAgent nav;
-    public float speed = 5f;
+    private float speed = 5f;
     private EnemyShooting es;
-
-
-    void Start()
-    {
-        //Y = 3.5f;   
-    }
-
+    //Gets certain components and finds the player
     void Awake()
     {
-
         es = GetComponent<EnemyShooting>();
         nav = GetComponent<NavMeshAgent>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
     }
-    
+    //Activates move()
     void Update()
     {
-        //  transform.LookAt((wayPoints[waypointIndex].position));
         move();
-
     }
-
+    //Moves to a random waypoint unless player is inRange, if the player is inRange it will move towards the player instead.
     void move()
     {
         nav.speed = speed;

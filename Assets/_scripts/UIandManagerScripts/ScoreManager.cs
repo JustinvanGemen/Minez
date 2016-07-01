@@ -4,26 +4,20 @@ using UnityEngine.UI;
 
 public class ScoreManager : MonoBehaviour {
 
-    
-    public Text scoreText;
+    [SerializeField]
+    public Text _scoreText;
     public float score;
-
-    
-
-	// Use this for initialization
+	// Sets the score at 0 at the beginning of the game
 	void Start () {
-      
         score = 0;
-        
 	}
-	
-	// Update is called once per frame
+	// activates UpdateScoreUI() every frame
 	void Update () {
         UpdateScoreUI();
     }
-
+    //Updates the Score UI to the current score.
     private void UpdateScoreUI()
     {
-        scoreText.text = "Score:" + score.ToString();
+        _scoreText.text = "Score:" + score.ToString();
     }
 }

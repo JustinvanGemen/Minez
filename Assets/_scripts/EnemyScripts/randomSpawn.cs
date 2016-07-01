@@ -4,34 +4,30 @@ using System.Collections.Generic;
 
 public class randomSpawn : MonoBehaviour {
 
-    public PickUps pickUp;
-    private float i;
-    public Transform[] wayPoints;
-    private int waypointIndex;
-
-    
-
+    public GameObject pickUp;
+    private float _i;
+    [SerializeField]
+    private Transform[] _wayPoints;
+    [SerializeField]
+    private int _waypointIndex;
+    //Sets counter i at 0
     void Start()
     {
-        i = 0;
+        _i = 0;
     }
-	// Update is called once per frame
+	// Counts to 10 and then spawns activates Spawn()
 	void Update ()
     {
-        if (i < Time.time)
+        if (_i < Time.time)
         {
-            i = Time.time + 10f;
-            spawn();
+            _i = Time.time + 10f;
+            Spawn();
         }
-        
     }
-
-    void spawn ()
+    //Spawns a pick-up at a random location
+    void Spawn ()
     {
-        
-            waypointIndex = Random.Range(0, wayPoints.Length);
-          
-            PickUps square  = Instantiate(pickUp, wayPoints[waypointIndex].position, wayPoints[waypointIndex].rotation) as PickUps;
-
+            _waypointIndex = Random.Range(0, _wayPoints.Length);
+            PickUps square  = Instantiate(pickUp, _wayPoints[_waypointIndex].position, _wayPoints[_waypointIndex].rotation) as PickUps;
     }
 }

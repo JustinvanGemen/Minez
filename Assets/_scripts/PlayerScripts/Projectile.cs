@@ -1,16 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
-/*
-Wat doet je class??? 1 ding?
- */
+
 public class Projectile : MonoBehaviour
 {
-    private ScoreManager scoreManager;
+    private ScoreManager _scoreManager;
     private float _speed = 35;
     //Destroys itself after 3 seconds.
     void Start()
     {
-        scoreManager = GameObject.FindGameObjectWithTag("sManager").GetComponent<ScoreManager>();
+        _scoreManager = GameObject.FindGameObjectWithTag("sManager").GetComponent<ScoreManager>();
         Destroy(gameObject, 3f);
     }
     //Moves the projectile forward in a straight line.
@@ -32,7 +30,7 @@ public class Projectile : MonoBehaviour
         }
         else if (other.CompareTag("Mine"))
         {
-            scoreManager.score += 150;
+            _scoreManager.score += 150;
             KillSelf();
             Destroy(other.gameObject);
         }

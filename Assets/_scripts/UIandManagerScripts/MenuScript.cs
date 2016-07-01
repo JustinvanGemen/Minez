@@ -4,37 +4,37 @@ using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class MenuScript : MonoBehaviour {
+    [SerializeField]
+    private Canvas _creditMenu;
+    [SerializeField]
+    private Button _startText;
+    [SerializeField]
+    private Button _exitText;
 
-    public Canvas creditMenu;
-    public Button startText;
-    public Button exitText;
-
-	// Use this for initialization
+	//Gets all the text and menu components
 	void Start () {
-
-        startText = startText.GetComponent<Button>();
-        creditMenu = creditMenu.GetComponent<Canvas>();
-        exitText = exitText.GetComponent<Button>();
-        creditMenu.enabled = false;
-
+        _startText = _startText.GetComponent<Button>();
+        _creditMenu = _creditMenu.GetComponent<Canvas>();
+        _exitText = _exitText.GetComponent<Button>();
+        _creditMenu.enabled = false;
 	}
+    //When you press the Start button it loads scene1
     public void StartLevel()
     {
         SceneManager.LoadScene("scene1");
     }
-
+    //When you press the credit button it'll go to the credit menu
     public void ExitPress()
     {
-        Debug.Log("Cancer");
-        creditMenu.enabled = true;
-        startText.enabled = false;
-        exitText.enabled = false;
+        _creditMenu.enabled = true;
+        _startText.enabled = false;
+        _exitText.enabled = false;
     }
-
+    //when you press the button inside the creditmenu, it goes back to the normal menu again.
     public void NoPress()
     {
-        creditMenu.enabled = false;
-        startText.enabled = true;
-        exitText.enabled = true;
+        _creditMenu.enabled = false;
+        _startText.enabled = true;
+        _exitText.enabled = true;
     }
 }

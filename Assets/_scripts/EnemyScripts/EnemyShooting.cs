@@ -3,39 +3,37 @@ using System.Collections;
 
 public class EnemyShooting : MonoBehaviour {
     [SerializeField]
-    private EnemyProjectile enemyProjectile;
+    private EnemyProjectile _enemyProjectile;
     [SerializeField]
-    private Transform muzzle;
-    public float bulletSpeed = 10;
-    private float delayCounter = 0.0F;
-    private float fireRate = 1F;
-    private GameObject Player;
-    private Transform player;
+    private Transform _muzzle;
+    public float _bulletSpeed = 10;
+    private float _delayCounter = 0.0F;
+    private float _fireRate = 1F;
+    private GameObject _Player;
+    private Transform _player;
     [SerializeField]
-    private Transform target;
-    private bool shooting;
+    private Transform _target;
+    private bool _shooting;
     public float range;
     public float seeRange;
     public bool inRange;
 
-
-	
+    //Puts the inRange Boolean on false.
 	void Start ()
     {
         inRange = false;
     }
-	
-	
+    //Finds the player.
 	void Awake ()
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+        _player = GameObject.FindGameObjectWithTag("Player").transform;
 	}
-
+    //Traces if the player is close enough to shoot at the player and shoots if this is the case.
     void Update()
     {        
-        delayCounter -= Time.deltaTime;
+        _delayCounter -= Time.deltaTime;
     
-        if(Vector3.Distance (transform.position, target.position) < range)
+        if(Vector3.Distance (transform.position, _target.position) < range)
         {
             inRange = true;
         }
@@ -43,17 +41,18 @@ public class EnemyShooting : MonoBehaviour {
         {
             inRange = false;
         }   
-        if (inRange == true && delayCounter <= Time.deltaTime)
+        if (inRange == true && _delayCounter <= Time.deltaTime)
         {
-            transform.LookAt(player.position);
+            transform.LookAt(_player.position);
             Shoot();
         }
     }
+    //Spawns a projectile 
     void Shoot()
     {        
-        shooting = true;
-        EnemyProjectile bullet = Instantiate(enemyProjectile, muzzle.position, muzzle.rotation) as EnemyProjectile;
-        bullet.SetSpeed(bulletSpeed);
-        delayCounter = Time.deltaTime + fireRate;
+        _shooting = true;
+        EnemyProjectile bullet = Instantiate(_enemyProjectile, _muzzle.position, _muzzle.rotation) as EnemyProjectile;
+        bullet.SetSpeed(_bulletSpeed);
+        _delayCounter = Time.deltaTime + _fireRate;
     }
 }

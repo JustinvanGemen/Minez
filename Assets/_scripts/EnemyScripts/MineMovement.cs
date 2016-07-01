@@ -5,26 +5,39 @@ using System.Collections.Generic;
 public class MineMovement : MonoBehaviour
 {
     [SerializeField]
-    private Transform[] wayPoints;
-    private int waypointIndex;
-    private NavMeshAgent nav;
-    private float speed = 5f;
+    private Transform[] _wayPoints;
+    private int _waypointIndex;
+    private NavMeshAgent _nav;
+    private float _speed = 5f;
 
+    //Gets the nav mesh component
     void Awake()
     {
-        nav = GetComponent<NavMeshAgent>();
+        _nav = GetComponent<NavMeshAgent>();
     }
+    //Activates move()
     void Update()
     {
         move();
     }
+    //Moves towards a random waypoint
     void move()
     {
-        nav.speed = speed;
-            if (nav.remainingDistance < 0.5)
+        _nav.speed = _speed;
+            if (_nav.remainingDistance < 0.5)
             {
-                waypointIndex = Random.Range(0, wayPoints.Length);
+                _waypointIndex = Random.Range(0, _wayPoints.Length);
             }
-            nav.SetDestination(wayPoints[waypointIndex].position);
+            _nav.SetDestination(_wayPoints[_waypointIndex].position);
+    }
+    //Kills itself when moving into a bullet
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("playerBullet"))
+        {
+            Destroy(other.gameObject);
+            Destroy(gameObject);
+        }
+
     }
 }

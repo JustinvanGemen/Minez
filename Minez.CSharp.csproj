@@ -65,7 +65,6 @@
     <Compile Include="Assets\_scripts\EnemyScripts\EnemyProjectile.cs" />
     <Compile Include="Assets\_scripts\EnemyScripts\EnemyShooting.cs" />
     <Compile Include="Assets\_scripts\EnemyScripts\EnemySpawner.cs" />
-    <Compile Include="Assets\_scripts\EnemyScripts\KillPlayer.cs" />
     <Compile Include="Assets\_scripts\EnemyScripts\MineMovement.cs" />
     <Compile Include="Assets\_scripts\EnemyScripts\RandomMovement.cs" />
     <Compile Include="Assets\_scripts\EnemyScripts\randomSpawn.cs" />
